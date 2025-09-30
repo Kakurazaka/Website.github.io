@@ -1,158 +1,255 @@
-@charset "UTF-8";
 body {
-	background: rgb(240,232,198);
-	margin: 0;
-	padding: 0;
-	line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  padding-bottom: 100px;
 }
-#outer {
-	background-color: #fff;
-	margin: 0 auto;
-	width: 900px;
+
+#contact {
+  width: 100%;
+  height: 100%;
 }
-header {
-	padding: 20px 20px 10px 30px;
-	height: 100px;
-	background: linear-gradient(to bottom, #fcfaf0, #fff);
+
+.section-header {
+  text-align: center;
+  margin: 0 auto;
+  padding: 40px 0;
+  font: 300 60px 'Oswald', sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 6px;
 }
-#content {
-	float: left;
-	width: 620px;
+
+.contact-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  max-width: 840px;
 }
-.inner {
-	margin: 0 10px;
-	padding: 10px 10px 20px 20px;
+
+/* Left contact page */
+.form-horizontal {
+  /*float: left;*/
+  max-width: 400px;
+  font-family: 'Lato';
+  font-weight: 400;
 }
-aside {
-	color: #676767;
-	font-size: 13px;
-	font-weight: normal;
-	width: 280px;
-	float: left;
-	padding: 17px 0 0 0;
+
+.form-control, 
+textarea {
+  max-width: 400px;
+  background-color: #000;
+  color: #fff;
+  letter-spacing: 1px;
 }
-.right-title {
-	font-size: 15px;
-	margin: 0 26px 0 0;
-	padding: 6px 10px 6px 20px;
-	font-weight: bold;
-	background-color: #C4F0EF;
-	color: #666;
-	border-top: 1px solid #ccc;
-	border-right: 1px solid #ccc;
-	border-left: 1px solid #ccc;
+
+.send-button {
+  margin-top: 15px;
+  height: 34px;
+  width: 400px;
+  overflow: hidden;
+  transition: all .2s ease-in-out;
 }
-.link {
-	margin: 0 26px 15px 0;
-	padding: 16px 10px 10px 14px;
-	border: 1px solid #c7c7c7;
+
+.alt-send-button {
+  width: 400px;
+  height: 34px;
+  transition: all .2s ease-in-out;
 }
-.link a {
-	font-weight: normal;
-	font-size: 14px;
-	color: #003366;
-	text-decoration: none;
+
+.send-text {
+  display: block;
+  margin-top: 10px;
+  font: 700 12px 'Lato', sans-serif;
+  letter-spacing: 2px;
 }
-.link a:hover {
-	text-decoration: underline;
+
+.alt-send-button:hover {
+  transform: translate3d(0px, -29px, 0px);
 }
-ul {
-	margin: 0 0 0 1em;
-	padding: 0;
+
+/* Begin Right Contact Page */
+.direct-contact-container {
+  max-width: 400px;
 }
-.link li {
-	list-style: none;
-	margin-bottom: 8px;
+
+/* Location, Phone, Email Section */
+.contact-list {
+  list-style-type: none;
+  margin-left: -30px;
+  padding-right: 20px;
 }
-p {
-	margin: 1em 0;
+
+.list-item {
+  line-height: 4;
+  color: #aaa;
 }
-img {
-	max-width: 100%;
-	height: auto;
-	border: 0;
+
+.contact-text {
+  font: 300 18px 'Lato', sans-serif;
+  letter-spacing: 1.9px;
+  color: #bbb;
 }
+
+.place {
+  margin-left: 62px;
+}
+
+.phone {
+  margin-left: 56px;
+}
+
+.gmail {
+  margin-left: 53px;
+}
+
+.contact-text a {
+  color: #bbb;
+  text-decoration: none;
+  transition-duration: 0.2s;
+}
+
+.contact-text a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+/* Social Media Icons */
+.social-media-list {
+  position: relative;
+  font-size: 22px;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.social-media-list li a {
+  color: #fff;
+}
+
+.social-media-list li {
+  position: relative; 
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  margin: 10px 3px;
+  line-height: 60px;
+  border-radius: 50%;
+  color: #fff;
+  background-color: rgb(27,27,27);
+  cursor: pointer; 
+  transition: all .2s ease-in-out;
+}
+
+.social-media-list li:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 50%;
+  opacity: 0;
+  box-shadow: 0 0 0 1px #fff;
+  transition: all .2s ease-in-out;
+}
+
+.social-media-list li:hover {
+  background-color: #fff; 
+}
+
+.social-media-list li:hover:after {
+  opacity: 1;  
+  transform: scale(1.12);
+  transition-timing-function: cubic-bezier(0.37,0.74,0.15,1.65);
+}
+
+.social-media-list li:hover a {
+  color: #000;
+}
+
+.copyright {
+  font: 200 14px 'Oswald', sans-serif;
+  color: #555;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
 hr {
-	border-width: 1px 0 0 0;
-	border-style: solid;
-	border-color: #ccc;
-	height: 1px;
+  border-color: rgba(255,255,255,.6);
 }
-a {
-	font-weight: normal;
-	color: #003366;
+
+/* Begin Media Queries*/
+@media screen and (max-width: 850px) {
+  .contact-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .direct-contact-container, .form-horizontal {
+    margin: 0 auto;
+  }  
+  
+  .direct-contact-container {
+    margin-top: 60px;
+    max-width: 300px;
+  }    
+  .social-media-list li {
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+  }
+  .social-media-list li:after {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+  }
 }
-h1 {
-	font-size: 28px;
-	margin: 0;
-	padding: 10px 0 0 0;
+
+@media screen and (max-width: 569px) {
+
+  .direct-contact-container, .form-wrapper {
+    float: none;
+    margin: 0 auto;
+  }  
+  .form-control, textarea {
+    
+    margin: 0 auto;
+  }
+ 
+  
+  .name, .email, textarea {
+    width: 280px;
+  } 
+  
+  .direct-contact-container {
+    margin-top: 60px;
+    max-width: 280px;
+  }  
+  .social-media-list {
+    left: 0;
+  }
+  .social-media-list li {
+    height: 55px;
+    width: 55px;
+    line-height: 55px;
+    font-size: 2rem;
+  }
+  .social-media-list li:after {
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+  }
+  
 }
-h1 a {
-	font-weight: bold;
-	color: #000;
-	text-decoration: none;
-}
-h1 a:hover {
-	text-decoration: underline;
-}
-h2 {
-	font-size: 18px;
-	margin: 10px 0;
-	padding: 10px;
-	background-color: #E7F5FD;
-	border: 1px solid #C7DBE5;
-}
-h2 a {
-	font-weight: bold;
-	text-decoration: none;
-	color: #265699;
-}
-h3 {
-	font-size: 16px;
-	color: #000000;
-}
-h3 a {
-	text-decoration: none;
-	color: #265699;
-}
-footer {
-	color: #666;
-	font-size: 13px;
-	height: 100px;
-	clear: both;
-	text-align: center;
-}
-.pagetop {
-	padding-right: 35px;
-	text-align: right;
-}
-blockquote {
-	border: 1px solid #ccc;
-	padding: 5px;
-	margin: 10px;
-}
-@media screen and (max-width: 768px) {
-#outer {
-	width: 100%;
-}
-#content, aside {
-	float: none;
-	width: 100%;
-	padding: 0;
-}
-.inner {
-	margin: 0;
-	padding: 10px;
-}
-.right-title, .link {
-	margin: 0;
-}
-.right-title {
-	border-top: none;
-	border-right: none;
-	border-left: none;
-}
-.link {
-	border: none;
-}
+
+@media screen and (max-width: 410px) {
+  .send-button {
+    width: 99%;
+  }
 }
