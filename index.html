@@ -11,3 +11,27 @@
     <ul id="myList">
       <!-- リスト項目がここに追加されます -->
     </ul>
+ <java>
+    function addItemToList() {
+      const itemNameInput = document.getElementById('itemName');
+      const itemValueInput = document.getElementById('itemValue');
+      const myForm = document.getElementById('myForm');
+
+      // 入力値が空でないか確認
+      if (itemNameInput.value === '' || itemValueInput.value === '') {
+        alert('項目名と値の両方を入力してください。');
+        return;
+      }
+
+      // <li>要素を作成
+      const listItem = document.createElement('li');
+      listItem.textContent = `${itemNameInput.value}: ${itemValueInput.value}`; // 取得した値でリスト項目を作成
+
+      // <ul>タグに子要素として追加
+      document.getElementById('myList').appendChild(listItem);
+
+      // 入力フォームをクリア
+      itemNameInput.value = '';
+      itemValueInput.value = '';
+    }
+<java/>
