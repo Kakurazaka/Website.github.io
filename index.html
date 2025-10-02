@@ -1,12 +1,58 @@
-<div class="registration-form">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>コンタクトフォームの必須項目カウントダウン</title>
+<style>
+  .container {
+    display: flex;
+  }
+  .form-container {
+    flex: 1;
+  }
+  .info-container {
+    flex: 1;
+    padding-left: 20px;
+  }
+</style>
+</head>
+<body>
 
-  <form action="https://ssgform.com/s/NlTWqgzAbyoH" method="post">
-    <h2>ユーザ登録</h2>
-
-    <label for="user-name">ユーザー名 (必須)</label>
-    <input id="user-name" type="text" name="user-name" placeholder="山田太郎">
-
-    <button type="submit">登録する</button>
-  </form>
-
+<div class="container">
+  <div class="form-container">
+    <h2>コンタクトフォーム</h2>
+    <form id="contactForm">
+      <label for="name">名前:</label><br>
+      <input type="text" id="name" name="name" oninput="updateRemainingCount()"><br>
+      <label for="email">メールアドレス:</label><br>
+      <input type="email" id="email" name="email" oninput="updateRemainingCount()"><br>
+      <label for="message">メッセージ:</label><br>
+      <textarea id="message" name="message" oninput="updateRemainingCount()"></textarea><br>
+      <input type="submit" value="送信">
+    </form>
+  </div>
+  <div class="info-container">
+    <h2>残りの必須項目: <span id="remainingCount">3</span></h2>
+  </div>
 </div>
+
+<script>
+function updateRemainingCount() {
+  const fields = ['name', 'email', 'message'];
+  let remaining = fields.length;
+
+  fields.forEach(field => {
+    if (document.getElementById(field).value.trim() !== '') {
+      remaining -= 1;
+    }
+  });
+
+  document.getElementById('remainingCount').textContent = remaining;
+}
+
+// ページ読み込み時にも一度実行しておく
+document.addEventListener('DOMContentLoaded', updateRemainingCount);
+</script>
+
+</body>
+</html>
