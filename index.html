@@ -46,29 +46,5 @@ function updateRemainingCount() {
 
   document.getElementById('remainingCount').textContent = remaining;
 }
-
-// ページ読み込み時にも一度実行しておく
-document.addEventListener('DOMContentLoaded', updateRemainingCount);
-</script>
-<div class="waiting-info">
-    現在、<span id="waiting-count">0</span>名が待機中です。
-</div>
-<script>
-  function updateWaitingCount() {
-    fetch('/api/waiting-status') // バックエンドのAPIエンドポイント
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById('waiting-count').textContent = data.count;
-        })
-        .catch(error => {
-            console.error('待機人数の取得に失敗しました:', error);
-        });
-}
-
-// ページ読み込み時に一度実行
-updateWaitingCount();
-
-// 5秒ごとに待機人数を更新
-setInterval(updateWaitingCount, 5000);
 </body>
 </html>
