@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>コンタクトフォームの必須項目カウントダウン</title>
+<title>必須項目</title>
 <style>
   .container {
     display: flex;
@@ -20,7 +20,7 @@
 
 <div class="container">
   <div class="form-container">
-    <h2>コンタクトフォーム</h2>
+    <h2>フォーム</h2>
     <form id="contactForm">
       <label for="name">名前:</label><br>
       <input type="text" id="name" name="name" oninput="updateRemainingCount()"><br>
@@ -30,12 +30,12 @@
     </form>
   </div>
   <div class="info-container">
-    <h2>残りの必須項目: <span id="remainingCount">3</span></h2>
+    <h2>残りの必須項目: <span id="remainingCount">2</span></h2>
   </div>
 </div>
 <script>
 function updateRemainingCount() {
-  const fields = ['name', 'email', 'message'];
+  const fields = ['name', 'message'];
   let remaining = fields.length;
 
   fields.forEach(field => {
